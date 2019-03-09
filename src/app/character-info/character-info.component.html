@@ -1,0 +1,19 @@
+<br>
+&nbsp;&nbsp;&nbsp;<button type="button" (click)="goBack()" class="btn btn-outline-dark">Back</button>
+<br>
+<br>
+<div class="jumbotron jumbotron-fluid" *ngIf="getSingleCharacter()">
+    <div class="container">
+      <h1 class="display-4">{{getSingleCharacter().name}}</h1>
+      <p class="lead">
+        Gender: {{getSingleCharacter().gender}}<br>
+        Culture: {{getSingleCharacter().culture}}<br>
+        Born: {{getSingleCharacter().born}}<br>
+        Death: {{getSingleCharacter().died!=""?getSingleCharacter().died:"Alive!"}}<br>
+        Aliases: 
+        <span *ngFor="let aliase of getSingleCharacter().aliases; let first=first;let last=last;">
+          {{aliase}}{{last ? "" : ", "}}
+        </span>
+      </p>
+    </div>
+  </div>

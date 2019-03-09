@@ -1,0 +1,22 @@
+<br>
+&nbsp;&nbsp;&nbsp;<button type="button" (click)="goBack()" class="btn btn-outline-dark">Back</button>
+<br>
+<br>
+<div class="jumbotron jumbotron-fluid" *ngIf="cardObj">
+    <div class="container">
+      <h1 class="display-4">{{cardObj[myId].name}}</h1>
+      <p class="lead">
+        Authors:
+        <span *ngFor="let author of cardObj[myId].authors; let first=first;let last=last;">
+          {{author}}
+          {{last?"":", "}}
+        </span><br>ISBN: 
+        <span>{{cardObj[myId].isbn}}</span><br>Released: 
+        <span>{{cardObj[myId].released}}</span><br>Publisher: 
+        <span>{{cardObj[myId].publisher}}</span><br>Number Of Pages: 
+        <span>{{cardObj[myId].numberOfPages}}</span><br>Media Type: 
+        <span>{{cardObj[myId].mediaType}}</span><br>Country: 
+        <span>{{cardObj[myId].country}}</span>
+      </p>
+    </div>
+  </div>

@@ -1,0 +1,21 @@
+<br>
+&nbsp;&nbsp;&nbsp;<button type="button" (click)="goBack()" class="btn btn-outline-dark">Back</button>
+<br>
+<br>
+<div class="jumbotron jumbotron-fluid" *ngIf="cardObj">
+    <div class="container">
+      <h1 class="display-4">{{cardObj[myId].name}}</h1>
+      <p class="lead">
+        Region: {{cardObj[myId].region}}<br>
+        Coat Of Arms: {{cardObj[myId].coatOfArms}}<br>
+        Words: {{cardObj[myId].words!=""?cardObj[myId].words:"no words!"}}<br>
+        Founded: {{cardObj[myId].founded!=""?cardObj[myId].founded:"unknown!"}}<br>
+        Seats: <span *ngFor="let seat of cardObj[myId].seats; let first=first;let last=last;">
+            {{seat!=""?seat:"no seat!"}}{{last ? "" : ", "}}
+          </span><br>
+        Titles: <span *ngFor="let title of cardObj[myId].titles; let first=first;let last=last;">
+            {{title!=""?title:"no title!"}}{{last ? "" : ", "}}
+          </span><br>
+      </p>
+    </div>
+  </div>

@@ -1,0 +1,53 @@
+<br><br>
+
+<div class="jumbotron jumbotron-fluid">
+
+    <div class="container">
+      <h1 class="display-4" >Books</h1><br>
+      <div class="row row-eq-height">
+          <div class="col-xs-4 col-md-4 panel" *ngFor="let book of books; let index=index;">
+            <div class="card bg-light mb-3" style="max-width: 18rem;">
+                <div class="card-header">{{book.name}}</div>
+                <div class="card-body">
+                  <h5 class="card-title">{{book.released | date}}</h5>
+                  <button [routerLink]="['/book',index]" type="button" class="btn btn-outline-secondary">Get Info!</button>
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <br><br>
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Characters</h1><br>
+    <div class="row row-eq-height">
+        <div class="col-xs-4 col-md-4 panel" *ngFor="let character of characters; let index=index;">
+          <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+              <div class="card-header">{{character.name}}</div>
+              <div class="card-body">
+                <h5 class="card-title">{{character.culture}}</h5>
+                <button [routerLink]="['/character',character.name]" type="button" class="btn btn-outline-light">Get Info!</button>
+              </div>
+            </div>
+        </div>
+      </div>
+  </div>
+</div>
+<br><br>
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <h1 class="display-4">Houses</h1><br>
+      <div class="row row-eq-height">
+          <div class="col-xs-4 col-md-4 panel" *ngFor="let house of houses; let index=index;">
+            <div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+                <div class="card-header">{{house.name}}</div>
+                <div class="card-body">
+                  <h5 class="card-title">{{house.region}}</h5>
+                  <button [routerLink]="['/house',index]" type="button" class="btn btn-outline-light">Get Info!</button>
+                </div>
+              </div>
+          </div>
+        </div>
+    </div>
+  </div>
